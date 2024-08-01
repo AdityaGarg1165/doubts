@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    background-color: #151717;
+}
+/* .btn{
+    /* border: 0.1rem solid; */
+/* }  */
+.btn::after{
+    content: "";
+    position: absolute;
+    inset: -0.01rem;
+    z-index: -1;
+    background: conic-gradient(
+      from var(--gradient-angle),
+      var(--clr-3),
+      var(--clr-4),
+      var(--clr-5),
+      var(--clr-4),
+      var(--clr-3)
+    );
+    border-radius: inherit;
+    animation: rotation 20s linear infinite;
+  
+
+}
+
+
+.card{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10vw;
+}
+
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  :root {
+    --clr-1: #10cadf;
+    --clr-2: rgb(121, 186, 224);
+    --clr-3: white;
+    --clr-4: #6779e0;
+    --clr-5: #224fe2;
+  }
+  
+  /* body {
+    background: var(--clr-2);
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+  } */
+  
+  .card {
+    height: 60vh;
+    aspect-ratio: 1 / 1.5;
+    background: var(--clr-1);
+    border-radius: 0.8rem;
+  
+    position: relative;
+  }
+  
+  .card::before,
+  .card::after {
+    content: "";
+    position: absolute;
+    inset: -0.01rem;
+    z-index: -1;
+    background: conic-gradient(
+      from var(--gradient-angle),
+      var(--clr-3),
+      var(--clr-4),
+      var(--clr-5),
+      var(--clr-4),
+      var(--clr-3)
+    );
+    border-radius: inherit;
+    animation: rotation 20s linear infinite;
+  }
+  
+  .card::after {
+    filter: blur(1.1rem);
+  }
+  
+  @keyframes rotation {
+    0% {
+      --gradient-angle: 0deg;
+    }
+    100% {
+      --gradient-angle: 360deg;
+    }
+  }
+  
